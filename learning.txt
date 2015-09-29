@@ -2,6 +2,7 @@
 git init
 
 2.把文件添加到仓库
-git add xxx.txt
+git add <file>
 
-
+3.把文件提交到仓库
+git commit -m "说明性内容"
