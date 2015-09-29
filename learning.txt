@@ -1,0 +1,7 @@
+1.初始化git仓库
+git init
+
+2.把文件添加到仓库
+git add xxx.txt
+
+
