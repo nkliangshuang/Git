@@ -1,3 +1,6 @@
+########http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000#######
+
+###git###
 初始化git仓库
 git init
 
@@ -20,4 +23,63 @@ git reflog # 利于，重返未来
 git reset --hard HEAD^   # HEAD^上个版本 HEAD^^ HEAD~100（HEAD指向当前版本）
 git reset --hard 234345  # log中的commit id 
 
+###创建密钥### ~/.ssh/
+ssh-keygen -t rsa -C "youremail@example.com"
 
+###上传到github###
+关联远程库#远程库名字默认为origin
+#使用https
+git romote add origin https://github.com/nkliangshuang/RepositoryName.git
+#或者使用ssh（用到刚刚创建的ssh密钥）
+git remote add origin git@github.com:PATH/REPO-NAME.git
+例如：                git@github.com:nkliangshuang/0467.git
+
+把本地库的内容推送到远程库 #非首次推送可省略参数-u
+git push -u origin master
+
+###从远程库克隆###
+git clone git@github.com:PATH/REPO-NAME.git
+	or
+git clone https://github.com/PATH/REPO-NAME.get
+
+###分支###
+创建dev分支 并切换
+git checkout -b 分支名
+	or
+git branch 分支名 #创建分支
+git checkout 分支名 #切换分支
+
+查看当前分支
+git branch
+
+在当前分支上操作：add/commit
+
+切换到master分支 
+git branch master
+
+把分支的工作合并到master分支
+git merge 分支名 #合并制定分支到当前分支
+禁用Fast forward的合并
+git merge --no-ff -m "说明性内容" 分支名
+
+删除分支
+git branch -d 分支名
+
+###推送分支###
+git push origin 分支名 #如:git push origin master
+
+###查看远程库信息###
+git remote -v
+###fetch分支###
+1.克隆
+2.例如在dev分支上开发，则必须创建远程origin的dev分支到本地
+git checkout -b dev origin/dev
+3.修改：add/commit
+4.push到远程(如果push失败，因为远程分支更新，所以要先git pull进行合并)
+git push origin dev
+###pull分支###
+5.git pull
+(1)如果因没有制定本地dev分支与远程origin/dev分支的链接，会出错，需要：
+git branch --set-upstram dev origin/dev
+(2)pull
+git pull
