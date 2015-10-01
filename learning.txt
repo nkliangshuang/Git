@@ -1,8 +1,23 @@
-1.初始化git仓库
+初始化git仓库
 git init
 
-2.把文件添加到仓库
+把文件添加到仓库
 git add <file>
 
-3.把文件提交到仓库
+把文件提交到仓库
 git commit -m "说明性内容"
+
+查看仓库状态
+git status
+
+查看历史记录
+git log  # 利于，退回从前
+
+查看每一次命令
+git reflog # 利于，重返未来
+
+版本退回
+git reset --hard HEAD^   # HEAD^上个版本 HEAD^^ HEAD~100（HEAD指向当前版本）
+git reset --hard 234345  # log中的commit id 
+
+
